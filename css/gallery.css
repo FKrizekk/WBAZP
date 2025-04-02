@@ -1,0 +1,60 @@
+#gallery{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 5px;
+}
+.imageCard{
+    cursor: pointer;
+    flex-basis: 20%;
+    flex-grow: 1;
+    aspect-ratio: 1;
+    border-radius: 5px;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    transition: all 50ms ease-out;
+}
+.imageCard:hover{
+    transform: scale(1.03);
+}
+.modal-content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 50px;
+}
+.modal{
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+.modalImg{
+    max-height: 90vh;
+    max-width: 80vw;
+}
+.modalBtn{
+    background-color: rgba(0, 0, 0, 0.397);
+    border-radius: 5px;
+    border: none;
+    color: var(--secondary);
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 4rem;
+    padding: 50px 5px;
+}
+.modalBtn:hover{
+    transform: scale(1.05);
+}

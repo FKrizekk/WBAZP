@@ -11,6 +11,11 @@ if(localStorage.getItem('theme') === 'dark'){
     toggleTheme();
 }
 
+document.querySelectorAll('h1').forEach(e => {
+    e.addEventListener('click', () => {
+        location.href = './';
+    });
+});
 
 function toggleMobileMenu(){
     const mobileMenu = document.getElementById('mobileMenu');

@@ -51,6 +51,7 @@ nav{
     gap: 2px;
 }
 h1{
+    cursor: pointer;
     color: var(--text);
     font-size: 3rem;
     font-family: 'Bebas Neue', sans-serif;
@@ -81,7 +82,6 @@ main{
     border-bottom-left-radius: 5px;
 }
 article{
-    width: 100%;
     margin: 15px;
 }
 #header{
@@ -110,7 +110,9 @@ div.vertDiv{
     margin: 0 10px;
 }
 
-
+iframe{
+    border-radius: 5px;
+}
 button{
     background-color: var(--header);
     border-radius: 5px;

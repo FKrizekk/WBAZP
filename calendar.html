@@ -5,20 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://meyerweb.com/eric/tools/css/reset/reset.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
-    <title>Úvod - USA Vans Club</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <title>Kalendář - USA Vans Club</title>
     <link rel="stylesheet" href="css/style.css">
     <style>
-        article{
-            width: auto;
-        }
-        
-        @media (min-width: 1165px) {
-            main{
-                justify-content: space-between;
-                flex-direction: row;
-            }
+        ul{
+            margin-bottom: 1rem;
         }
     </style>
 </head>
@@ -31,12 +24,12 @@
             </section>
             <section id="desktopNav">
                 <nav>
-                    <button class="selected" onclick="location.href='./'">Úvod</button>
+                    <button onclick="location.href='./'">Úvod</button>
                     <button onclick="location.href='./club.html'">Klub</button>
                     <button onclick="location.href='./vehicles.html'">Naše vozidla</button>
                     <button onclick="location.href='./articles.html'">Články</button>
                     <button onclick="location.href='./gallery.html'">Galerie</button>
-                    <button onclick="location.href='./calendar.html'">Kalendář akcí</button>
+                    <button class="selected" onclick="location.href='./calendar.html'">Kalendář akcí</button>
                     <button onclick="location.href='./links.html'">Odkazy</button>
                 </nav>
                 <div class="vertDiv"></div>
@@ -47,12 +40,12 @@
             </section>
             <section id="iconNav">
                 <nav>
-                    <button class="selected" onclick="location.href='./'"><i class="fa-solid fa-house"></i></button>
+                    <button onclick="location.href='./'"><i class="fa-solid fa-house"></i></button>
                     <button onclick="location.href='./club.html'"><i class="fa-solid fa-users"></i></button>
                     <button onclick="location.href='./vehicles.html'"><i class="fa-solid fa-car"></i></button>
                     <button onclick="location.href='./articles.html'"><i class="fa-solid fa-newspaper"></i></button>
                     <button onclick="location.href='./gallery.html'"><i class="fa-solid fa-image"></i></button>
-                    <button onclick="location.href='./calendar.html'"><i class="fa-solid fa-calendar-days"></i></button>
+                    <button class="selected" onclick="location.href='./calendar.html'"><i class="fa-solid fa-calendar-days"></i></button>
                     <button onclick="location.href='./links.html'"><i class="fa-solid fa-link"></i></button>
                     <button onclick="location.href='./login.html'"><i class="fa-solid fa-user"></i></button>
                 </nav>
@@ -66,42 +59,10 @@
     </header>
     <main>
         <article>
-            <section>
-                <h2>Nejnovější členové</h2>
-                <section id="memberPanel" class="panel">
-                    <a href="">Jan Van</a>
-                    <a href="">Pepa z Depa</a>
-                    <a href="">John Ford</a>
-                </section>
-            <section>
-                <h2>Nejnovější fotky</h2>
-                <section id="photoPanel" class="panel">
-                    <div>
-                        <div style="background-image: url(gallery/20230323_162547.jpg);"></div>
-                        <div style="background-image: url(gallery/IMG_2113.JPG);"></div>
-                        <div style="background-image: url(gallery/IMG_3573.JPG);"></div>
-                        <i onclick="location.href='./gallery.html'" class="fa-solid fa-images"></i>
-                    </div>
-                </section>
-            </section>
-        </article>
-        <article>
-            <h2>Nejbližší akce</h2>
-            <section class="event panel">
-                <p>
-                    Klub sdružující majitele a příznivce amerických Vanů, 
-                    vás srdečně zve na
-                </p>
-                <strong>8th USA Vans Club meeting</strong>
-                <p>
-                    Setkání majitelů a příznivců legendárních amerických Vanů<br>
-                    Sraz vozidel v sobotu 31. 8. od 10 hod. na parkovišti Muzea starých strojů a technologií v Žamberku
-                </p>
-                <iframe style="border:none" src="https://mapy.com/s/bezecebava" width="100%" height="300px" frameborder="0"></iframe>
-                <p>(Betlém 506, 564 01 Žamberk)</p>
-                <img src="assets/images/Samolepka-2024.png" alt="Samolepka-2024">
-            </section>
-        </article>
+            <h2>Kalendář</h2>
+            <hr>
+            <p>kalendar</p>
+        </article> 
     </main>
     <section id="mobileMenu">
         <header>
@@ -117,12 +78,12 @@
             </div>
         </header>
         <nav>
-            <button class="selected" onclick="location.href='./'">Úvod</button>
+            <button onclick="location.href='./'">Úvod</button>
             <button onclick="location.href='./club.html'">Klub</button>
             <button onclick="location.href='./vehicles.html'">Naše vozidla</button>
             <button onclick="location.href='./articles.html'">Články</button>
             <button onclick="location.href='./gallery.html'">Galerie</button>
-            <button onclick="location.href='./calendar.html'">Kalendář akcí</button>
+            <button class="selected" onclick="location.href='./calendar.html'">Kalendář akcí</button>
             <button onclick="location.href='./links.html'">Odkazy</button>
         </nav>
         <section id="loginSection">

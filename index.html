@@ -6,9 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://meyerweb.com/eric/tools/css/reset/reset.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
     <title>USA Vans Club</title>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
+    <style>
+        article{
+            width: auto;
+        }
+        
+        @media (min-width: 1165px) {
+            main{
+                justify-content: space-between;
+                flex-direction: row;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -17,7 +29,7 @@
             <section>
                 <h1>USA VANS CLUB</h1>
             </section>
-            <section>
+            <section id="desktopNav">
                 <nav>
                     <button class="selected">Úvod</button>
                     <button onclick="location.href='./klub.html'">Klub</button>
@@ -28,28 +40,97 @@
                     <button>Odkazy</button>
                 </nav>
                 <div class="vertDiv"></div>
-                <section>
+                <section id="loginSection">
                     <button>Přihlásit se</button>
                     <button class="special">Registrovat</button>
                 </section>
+            </section>
+            <section id="iconNav">
+                <nav>
+                    <button class="selected"><i class="fa-solid fa-house"></i></button>
+                    <button onclick="location.href='./klub.html'"><i class="fa-solid fa-users"></i></button>
+                    <button><i class="fa-solid fa-car"></i></button>
+                    <button><i class="fa-solid fa-newspaper"></i></button>
+                    <button><i class="fa-solid fa-image"></i></button>
+                    <button><i class="fa-solid fa-calendar-days"></i></button>
+                    <button><i class="fa-solid fa-link"></i></button>
+                    <button><i class="fa-solid fa-user"></i></button>
+                </nav>
+            </section>
+            <section id="mobileNav">
+                <button class="mobileMenuButton" onclick="toggleMobileMenu()">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
             </section>
         </div>
     </header>
     <main>
         <article>
-            <img id="logo" src="https://usavans.cz/images/logovlajka.png" alt="">
+            <section>
+                <h2>Nejnovější členové</h2>
+                <section id="memberPanel" class="panel">
+                    <a href="">Jan Van</a>
+                    <a href="">Pepa z Depa</a>
+                    <a href="">John Ford</a>
+                </section>
+            <section>
+                <h2>Nejnovější fotky</h2>
+                <section id="photoPanel" class="panel">
+                    <div>
+                        <div style="background-image: url(gallery/20230323_162547.jpg);"></div>
+                        <div style="background-image: url(gallery/IMG_2113.JPG);"></div>
+                        <div style="background-image: url(gallery/IMG_3573.JPG);"></div>
+                        <i onclick="location.href='./gallery.html'" class="fa-solid fa-images"></i>
+                    </div>
+                </section>
+            </section>
         </article>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam repudiandae totam eius quidem illo explicabo sequi, velit unde aliquam odio perferendis omnis ullam alias optio quasi voluptatem provident cupiditate quos.
-        Inventore adipisci eius repellat harum dicta dolorum tenetur aperiam aspernatur quia. Explicabo, quam minus! Provident deserunt neque facilis deleniti, exercitationem voluptatum corrupti, sapiente aperiam quisquam nulla beatae. Rerum, ab dolorum.
-        Sit aut vero hic consequuntur, fugiat minima, in aliquam quidem excepturi facere ipsam exercitationem laboriosam earum quis maiores aspernatur cumque omnis quas eos dolores. Quos maiores esse natus nisi. Et.
-        A harum, error adipisci vel ducimus voluptate ab molestiae odio architecto sapiente blanditiis suscipit temporibus molestias reprehenderit dignissimos ipsa voluptatibus qui in corrupti fugit? Illum distinctio blanditiis saepe fugit corrupti.
-        Quos aspernatur explicabo quas architecto error placeat! Sed laudantium aspernatur facilis molestias. Laudantium omnis soluta repellat ab molestiae ducimus aut? Voluptatum quam beatae quas nam et corporis minus veritatis enim?
-        Consequatur, eveniet. Exercitationem a molestias ad libero iusto atque amet mollitia beatae minus sunt tenetur labore recusandae ipsam, quos saepe laboriosam culpa cumque? Odit voluptate quis soluta at doloremque laudantium!
-        Asperiores excepturi iste assumenda labore dolores delectus similique possimus quidem provident architecto eaque, ab doloribus minus dolorum quos neque repudiandae quaerat aperiam qui modi omnis ut explicabo. Esse, deserunt nihil?
-        Doloribus cum dolor eveniet velit fugiat dolore perferendis ea, molestias explicabo voluptatem odit hic minus, et commodi adipisci itaque non nulla. Porro, aliquid impedit odit sint esse molestias cum voluptas.
-        Eum ipsam id debitis modi reiciendis, dicta laboriosam? Atque beatae nam perspiciatis. Molestiae id possimus impedit pariatur quasi illum perspiciatis voluptas numquam ipsum aspernatur? Corrupti maxime officia laborum ipsum ullam.
-        Aspernatur, numquam? Autem velit blanditiis rem veritatis iste tempore placeat libero in, voluptas facere saepe ex est laudantium repudiandae cupiditate nisi! Maiores quidem eaque reprehenderit ipsam et porro animi libero?</p>    
+        <article>
+            <h2>Nejbližší akce</h2>
+            <section class="event panel">
+                <p>
+                    Klub sdružující majitele a příznivce amerických Vanů, 
+                    vás srdečně zve na
+                </p>
+                <strong>8th USA Vans Club meeting</strong>
+                <p>
+                    Setkání majitelů a příznivců legendárních amerických Vanů<br>
+                    Sraz vozidel v sobotu 31. 8. od 10 hod. na parkovišti Muzea starých strojů a technologií v Žamberku
+                </p>
+                <iframe style="border:none" src="https://mapy.com/s/bezecebava" width="100%" height="300px" frameborder="0"></iframe>
+                <p>(Betlém 506, 564 01 Žamberk)</p>
+                <img src="assets/images/Samolepka-2024.png" alt="Samolepka-2024">
+            </section>
+        </article>
     </main>
+    <section id="mobileMenu">
+        <header>
+            <div id="header">
+                <section>
+                    <h1>USA VANS CLUB</h1>
+                </section>
+                <section id="mobileNav">
+                    <button class="mobileMenuButton" onclick="toggleMobileMenu()">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                </section>
+            </div>
+        </header>
+        <nav>
+            <button class="selected">Úvod</button>
+            <button onclick="location.href='./klub.html'">Klub</button>
+            <button>Naše vozidla</button>
+            <button>Články</button>
+            <button>Galerie</button>
+            <button>Kalendář akcí</button>
+            <button>Odkazy</button>
+        </nav>
+        <section id="loginSection">
+            <button>Přihlásit se</button>
+            <button class="special">Registrovat</button>
+        </section>
+    </section>
 </body>
+<script src="script.js"></script>
 
 </html>

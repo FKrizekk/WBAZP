@@ -5,10 +5,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://meyerweb.com/eric/tools/css/reset/reset.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <title>USA Vans Club</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
+    <style>
+        ul{
+            margin-bottom: 1rem;
+        }
+    </style>
 </head>
 
 <body>
@@ -17,7 +23,7 @@
             <section>
                 <h1>USA VANS CLUB</h1>
             </section>
-            <section>
+            <section id="desktopNav">
                 <nav>
                     <button onclick="location.href='./'">Úvod</button>
                     <button class="selected">Klub</button>
@@ -28,19 +34,134 @@
                     <button>Odkazy</button>
                 </nav>
                 <div class="vertDiv"></div>
-                <section>
+                <section id="loginSection">
                     <button>Přihlásit se</button>
                     <button class="special">Registrovat</button>
                 </section>
+            </section>
+            <section id="iconNav">
+                <nav>
+                    <button onclick="location.href='./'"><i class="fa-solid fa-house"></i></button>
+                    <button class="selected"><i class="fa-solid fa-users"></i></button>
+                    <button><i class="fa-solid fa-car"></i></button>
+                    <button><i class="fa-solid fa-newspaper"></i></button>
+                    <button><i class="fa-solid fa-image"></i></button>
+                    <button><i class="fa-solid fa-calendar-days"></i></button>
+                    <button><i class="fa-solid fa-link"></i></button>
+                    <button><i class="fa-solid fa-user"></i></button>
+                </nav>
+            </section>
+            <section id="mobileNav">
+                <button class="mobileMenuButton" onclick="toggleMobileMenu()">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
             </section>
         </div>
     </header>
     <main>
         <article>
-            <img id="logo" src="https://usavans.cz/images/logovlajka.png" alt="">
-        </article>
-        <p>KLUBBBBB</p>    
+            <h2>Klub</h2>
+            <hr>
+            <p>Kdo by neznal jeden ze symbolů Ameriky, kterým jsou americké VANy, tedy dodávky a mikrobusy.</p>
+            <p>Jsou používány ke stejným účelům, jako kdekoliv jinde na světě. Jsou ale na tolik specifickými, že je nelze v našich podmínkách přehlédnout. Na první pohled je poznáte pro jejich výjimečný a osobitý vzhled. Pocity, které mnozí znáte z jízdy běžným dodávkovým automobilem, se jízdě americkým VANem v ničem nepodobají. Americké VANy mají svůj styl, svoje kouzlo, svoji duši.</p>
+            <p>Jedná se prostě o zcela specifická vozidla, jenž si svými vlastnostmi vytvořila sama vlastní kategorii a také obrovské množství příznivců po celém světě. A mezi ně patříme i my. Jsme skupinka dlouholetých příznivců amerických automobilů. Vzhledem k výjimečnosti amerických dodávek jsme se rozhodli zvýšit povědomí o těchto báječných autech. A to byl hlavní impulz pro založení prvního klubu příznivců amerických VANů v České republice. Jejich majitelů u nás je mnoho a svými vozy zdobí prakticky každé setkání US cars.</p>
+            <p>Každý, koho VANy americké výroby oslovují, chce se o nich něco dozvědět, blíže se s nimi seznámit, nebo se dokonce stát jejich majitelem, je na správném místě! Právě se nacházíte na prvních webových stránkách v ČR věnovaných těm nejúžasnějším americkým automobilům a všichni jste zde srdečně vítáni!</p>
+            <p>Tyto stránky jsou oficiální platformou našeho neformálního seskupení, které vzniklo ryze spontánně, na dobrovolné bázi a které si klade za cíl poskytnout Vám všem takové informace, které hledáte.</p>
+            <p>I přesto, že se jedná o zcela nové uskupení, chcete-li klub příznivců amerických VAN's, můžete si být jisti, že jeho činnost je podložena dlouhodobými osobními zkušenostmi a vědomostmi o těchto vozech. Naši zakládající členové tyto automobily již dlouho vlastní, mají s nimi osobní zkušenosti, znají jejich specifické rysy a rozdíly s ohledem na značku. Dokážou si však poradit i s jejich servisem, opravami a jejich neustálým vylepšováním, což je pro majitele amerických VANů typickým rysem.</p>
+            <p style="text-align: center;"><strong>Buďte vítáni mezi námi a těmi báječnými auty!</strong></p>
+            <h3>Proč se stát členem našeho klubu a co můžete očekávat?</h3>
+            <ul>
+                <li>Klubové akce<br>pořádání klubových setkání, společných vyjížděk</li>
+                <li>Klubové diskuzní fórum <br>nejen online spojení našich členů, ale také pokec, sdílení videí, fotek, článků, vzájemná pomoc</li>
+                <li>Odborná pomoc při opravách, přestavbách Vašich vanů, <br>přítel na telefonu, přístup k&nbsp;uživatelským příručkám Vašeho vozidla, manuálům, návodům</li>
+                <li>Prezentace Vašeho vozu a posádky na webu <br>nejde o to se jen pochlubit Vašim miláčkem, ale ukázat, co vše je možné vymyslet, dát ostatním inspiraci, vědět o sobě a společně mít radost z&nbsp;našeho koníčka</li>
+                <li>Klubové předměty <br>samozřejmostí budou klubové samolepky, upomínkové předměty ze srazů, ale budou následovat i tématicky zaměřené předměty, které určitě fanouškům amerických vanů nesmí chybět</li>
+                <li>Testace <br>pomoc pro zájemce o testaci Vašeho veteránského vozu, rady, zprostředkování</li>
+            </ul>
+            <h3>Kdo se může stát členem klubu?</h3>
+            <ul>
+                <li>každý, kdo vlastní automobil americké výroby</li>
+                <li>minimální požadavky: alespoň kombi (a kategorie vyšší: SUV, pickup, van atd.) s&nbsp;náznakem snahy o přestavbu na obytné (matrace, či vystlání pro pohodlnější přenocování + vařič, ohniště a nebo alespoň gril podmínkou)</li>
+            </ul>
+            <h3>Práva a povinnosti členů:</h3>
+            <ul>
+                <li>právo každého člena končí tam, kde začíná svoboda jiného člena</li>
+                <li>propagace klubu a jeho účelu, s&nbsp;tím úzce souvisí nezbytně nutné výdaje na provoz domény a webhostingu klubu</li>
+                <li>přispívat svými myšlenkami, náměty a aktivní činností k&nbsp;naplňování poslání a bezkonfliktního fungování klubu</li>
+            </ul>
+            <h3>Členské poplatky:</h3>
+            <ul>
+                <li>žádné, ale můžou být dobrovolné dle vlastního uvážení a možností</li>
+                <li>jsou přijímány od kohokoliv včetně nečlenů klubu</li>
+                <li>jak je uvedeno výše, jediným výdajem bude částka na provoz domény a webhostingu, která bude rozpočítána mezi členy jednou ročně (cca 1000 Kč rozpočítáno mezi všechny členy)</li>
+                <li>případné jiné výdaje musí být projednány a odsouhlaseny členy klubu</li>
+            </ul>
+            <h3>Jak se do Klubu přihlásit?</h3>
+            <ul>
+                <li>Vyplňte <a href="/index.php/cs/klub/registrace">registrační formulář</a> na tomto webu. Vaše&nbsp;registrace bude zkontrolována a potvrzena předsednictvem klubu.</li>
+            </ul>
+            <h3>Kdy se stáváte členem klubu?</h3>
+            <ul>
+                <li>Po obdržení potvrzení o Vašem přijetí, které bude odesláno na Vámi uvedený e-mail.</li>
+            </ul>
+            <p style="text-align: center;">K případné další komunikaci neváhejte využít <a href="./contact.html">naše kontakty</a></p>
+        </article> 
     </main>
+    <section id="mobileMenu">
+        <header>
+            <div id="header">
+                <section>
+                    <h1>USA VANS CLUB</h1>
+                </section>
+                <section id="desktopNav">
+                    <nav>
+                        <button onclick="location.href='./'">Úvod</button>
+                        <button class="selected">Klub</button>
+                        <button>Naše vozidla</button>
+                        <button>Články</button>
+                        <button>Galerie</button>
+                        <button>Kalendář akcí</button>
+                        <button>Odkazy</button>
+                    </nav>
+                    <div class="vertDiv"></div>
+                    <section id="loginSection">
+                        <button>Přihlásit se</button>
+                        <button class="special">Registrovat</button>
+                    </section>
+                </section>
+                <section id="iconNav">
+                    <nav>
+                        <button onclick="location.href='./'"><i class="fa-solid fa-house"></i></button>
+                        <button class="selected"><i class="fa-solid fa-users"></i></button>
+                        <button><i class="fa-solid fa-car"></i></button>
+                        <button><i class="fa-solid fa-newspaper"></i></button>
+                        <button><i class="fa-solid fa-image"></i></button>
+                        <button><i class="fa-solid fa-calendar-days"></i></button>
+                        <button><i class="fa-solid fa-link"></i></button>
+                        <button><i class="fa-solid fa-user"></i></button>
+                    </nav>
+                </section>
+                <section id="mobileNav">
+                    <button class="mobileMenuButton" onclick="toggleMobileMenu()">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                </section>
+            </div>
+        </header>
+        <nav>
+            <button class="selected">Úvod</button>
+            <button onclick="location.href='./klub.html'">Klub</button>
+            <button>Naše vozidla</button>
+            <button>Články</button>
+            <button>Galerie</button>
+            <button>Kalendář akcí</button>
+            <button>Odkazy</button>
+        </nav>
+        <section id="loginSection">
+            <button>Přihlásit se</button>
+            <button class="special">Registrovat</button>
+        </section>
+    </section>
 </body>
 
 </html>

@@ -1,21 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
 :root[data-theme="light"] {
     --text: #000000;
+    --textLight: #494949;
     --header: rgb(231, 231, 231);
-    --background: #bebebe;
-    --primary: #002868;
+    --background: #dddddd;
+    --primary: #004fce;
     --secondary: #ffffff;
     --tertiary: #bf0a30;
 }
 :root[data-theme="dark"] {
-    --text: #ffffff;
-    --header: rgb(28, 28, 28);
-    --background: #131313;
-    --primary: #002868;
-    --secondary: #1d1d1d;
-    --tertiary: #bf0a30;
+
 }
 
+*{
+    font-family: "Lato";
+}
 body{
+    line-height: normal;
     background-color: var(--background);
     color: var(--text);
     display: flex;
@@ -42,9 +45,11 @@ aside{
 nav{
     display: flex;
     flex-direction: row;
+    gap: 2px;
 }
-header p{
-    font-size: 2em;
+h1{
+    font-size: 3em;
+    font-family: 'Bebas Neue', sans-serif;
 }
 main{
     background-color: var(--secondary);
@@ -71,17 +76,38 @@ main{
     background-color: white;
 }
 
+div.vertDiv{
+    height: 60%;
+    width: 2px;
+    background-color: var(--textLight);
+    margin: 0 10px;
+}
+
+
 button{
     background-color: var(--header);
-    color: var(--text);
-    border: none;
+    border-radius: 5px;
+    color: var(--textLight);
+    border: solid 2px transparent;
     padding: 5px 10px;
     cursor: pointer;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1rem;
 }
 button:hover{
     background-color: rgba(0, 0, 0, 0.205);
+    color: var(--text);
 }
 button.selected{
     background-color: var(--primary);
     color: var(--header);
+}
+button.special{
+    background-color: var(--text);
+    color: var(--header);
+}
+button.special:hover{
+    background-color: var(--header);
+    color: var(--text);
+    border: solid 2px var(--text);
 }

@@ -8,9 +8,14 @@ fetch(url + "/get-images")
         for (let i = 0; i < images.length; i++) {
             const imgElement = document.createElement('div');
             imgElement.style.backgroundImage = `url(${url + imgs[i]})`;
-            imgElement.className = 'imageCard';
+            imgElement.style.setProperty('--animate-delay', `${i * 0.1}s`);
+            imgElement.classList = 'imageCard animate__fadeIn animate__animated';
             imgElement.addEventListener('click', () => openImage(i));
             document.querySelector('#gallery').appendChild(imgElement);
+        }
+        const loader = document.querySelector('.loader');
+        if (loader) {
+            loader.style.display = 'none';
         }
     })
     .catch(error => {

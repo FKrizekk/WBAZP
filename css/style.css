@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
-:root[data-theme="light"] {
+:root{
     --text: #000000;
     --textLight: #494949;
     --header: rgb(231, 231, 231);
@@ -9,9 +9,6 @@
     --primary: #004fce;
     --secondary: #ffffff;
     --tertiary: #bf0a30;
-}
-:root[data-theme="dark"] {
-
 }
 
 *{
@@ -227,13 +224,35 @@ p{
     transform: translateX(100%);
     transition: all 0.1s ease-out;
 }
-#mobileMenu > nav{
-    margin-top: 60px;
+#mobileMenuContent > nav{
+    gap: 10px;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    align-items: stretch;
 }
-
+#mobileMenuContent > nav > button{
+    font-size: 4rem;
+}
+#mobileMenuContent #loginSection > button{
+    font-size: 3rem;
+}
+#mobileMenuContent #loginSection{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+#mobileMenuContent{
+    margin-top: 60px;
+    width: 100%;
+    height: calc(100% - 60px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 10px;
+}
 
 
 
@@ -279,12 +298,14 @@ p{
 
 
 /* From Uiverse.io by barisdogansutcu */
-svg {
+.loader {
     width: 3.25em;
     transform-origin: center;
     animation: rotate4 2s linear infinite;
 }
-
+.loader.fullscreen{
+    height: 300px;
+}
 circle {
     fill: none;
     stroke: hsl(214, 97%, 59%);

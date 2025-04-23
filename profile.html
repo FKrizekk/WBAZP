@@ -5,15 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://meyerweb.com/eric/tools/css/reset/reset.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-    <title>Články - USA Vans Club</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <title>Profil test</title>
     <link rel="stylesheet" href="css/style.css">
-    <style>
-        ul{
-            margin-bottom: 1rem;
-        }
-    </style>
+    <title>Dokument</title>
 </head>
 
 <body>
@@ -27,15 +23,15 @@
                     <button onclick="location.href='./'">Úvod</button>
                     <button onclick="location.href='./club.html'">Klub</button>
                     <button onclick="location.href='./vehicles.html'">Naše vozidla</button>
-                    <button class="selected" onclick="location.href='./articles.html'">Články</button>
+                    <button onclick="location.href='./articles.html'">Články</button>
                     <button onclick="location.href='./gallery.html'">Galerie</button>
                     <button onclick="location.href='./calendar.html'">Kalendář akcí</button>
                     <button onclick="location.href='./links.html'">Odkazy</button>
                 </nav>
                 <div class="vertDiv"></div>
                 <section class="loginSection">
-                    <button onclick="location.href='./login.html?type=login'">Přihlásit se</button>
-                    <button onclick="location.href='./login.html?type=register'" class="special">Registrovat</button>
+                    <button class="selected" onclick="location.href='./login.html?type=login'">Profil</button>
+                    <button onclick="location.href='./login.html?type=register'" class="special">Odhlasit</button>
                 </section>
             </section>
             <section id="iconNav">
@@ -43,11 +39,11 @@
                     <button onclick="location.href='./'"><i class="fa-solid fa-house"></i></button>
                     <button onclick="location.href='./club.html'"><i class="fa-solid fa-users"></i></button>
                     <button onclick="location.href='./vehicles.html'"><i class="fa-solid fa-car"></i></button>
-                    <button class="selected" onclick="location.href='./articles.html'"><i class="fa-solid fa-newspaper"></i></button>
+                    <button onclick="location.href='./articles.html'"><i class="fa-solid fa-newspaper"></i></button>
                     <button onclick="location.href='./gallery.html'"><i class="fa-solid fa-image"></i></button>
                     <button onclick="location.href='./calendar.html'"><i class="fa-solid fa-calendar-days"></i></button>
                     <button onclick="location.href='./links.html'"><i class="fa-solid fa-link"></i></button>
-                    <button onclick="location.href='./login.html'"><i class="fa-solid fa-user"></i></button>
+                    <button class="selected" onclick="location.href='./login.html'"><i class="fa-solid fa-user"></i></button>
                 </nav>
             </section>
             <section id="mobileNav">
@@ -59,11 +55,9 @@
     </header>
     <main>
         <article>
-            <h2>Článek</h2>
+            <h2>Profile</h2>
             <hr>
-            <svg viewBox="25 25 50 50" class="loader fullscreen">
-                <circle r="20" cy="50" cx="50"></circle>
-            </svg>
+            <p></p>
         </article> 
     </main>
     <section id="mobileMenu">
@@ -84,19 +78,38 @@
                 <button onclick="location.href='./'">Úvod</button>
                 <button onclick="location.href='./club.html'">Klub</button>
                 <button onclick="location.href='./vehicles.html'">Naše vozidla</button>
-                <button class="selected" onclick="location.href='./articles.html'">Články</button>
+                <button onclick="location.href='./articles.html'">Články</button>
                 <button onclick="location.href='./gallery.html'">Galerie</button>
                 <button onclick="location.href='./calendar.html'">Kalendář akcí</button>
                 <button onclick="location.href='./links.html'">Odkazy</button>
             </nav>
             <section class="loginSection">
-                <button onclick="location.href='./login.html?type=login'">Přihlásit se</button>
-                <button onclick="location.href='./login.html?type=register'" class="special">Registrovat</button>
+                <button class="selected" onclick="location.href='./login.html?type=login'">Profil</button>
+                <button onclick="location.href='./login.html?type=register'" class="special">Odhlasit</button>
             </section>
         </div>
     </section>
 </body>
 <script src="js/script.js"></script>
-<script type="module" src="js/supabase.js"></script>
+<script type="module">
+    import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm';
 
+    const supabaseUrl = 'https://glpxjoolzgsorebqkfrk.supabase.co';
+    const supabaseAnonKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdscHhqb29semdzb3JlYnFrZnJrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDU0MjYzMTEsImV4cCI6MjA2MTAwMjMxMX0.Md8JoGfIp6ayhHEntdsnVCTb-K7mzjP8-kUNnhKDEGY';
+    const supabase = createClient(supabaseUrl, supabaseAnonKey);
+
+  
+    const { data: { session } } = await supabase.auth.getSession();
+    if (session) {
+        // User is logged in
+        console.log("User is logged in");
+        document.querySelector("main p").innerText = session.user.email;
+    } else {
+        // User is not logged in
+        console.log("User is not logged in redirecting to login page");
+        window.location.href = "./login.html?type=login";
+    }
+    
+</script>
+<script type="module" src="js/supabase.js"></script>
 </html>

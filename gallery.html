@@ -34,7 +34,7 @@
                     <button onclick="location.href='./links.html'">Odkazy</button>
                 </nav>
                 <div class="vertDiv"></div>
-                <section id="loginSection">
+                <section class="loginSection">
                     <button onclick="location.href='./login.html?type=login'">Přihlásit se</button>
                     <button onclick="location.href='./login.html?type=register'" class="special">Registrovat</button>
                 </section>
@@ -63,7 +63,7 @@
             <h2>Galerie</h2>
             <hr>
             <div id="gallery">
-                <svg viewBox="25 25 50 50" class="loader">
+                <svg viewBox="25 25 50 50" class="loader fullscreen">
                     <circle r="20" cy="50" cx="50"></circle>
                 </svg>
             </div>
@@ -82,21 +82,25 @@
                 </section>
             </div>
         </header>
-        <nav>
-            <button onclick="location.href='./'">Úvod</button>
-            <button onclick="location.href='./club.html'">Klub</button>
-            <button onclick="location.href='./vehicles.html'">Naše vozidla</button>
-            <button onclick="location.href='./articles.html'">Články</button>
-            <button class="selected" onclick="location.href='./gallery.html'">Galerie</button>
-            <button onclick="location.href='./calendar.html'">Kalendář akcí</button>
-            <button onclick="location.href='./links.html'">Odkazy</button>
-        </nav>
-        <section id="loginSection">
-            <button>Přihlásit se</button>
-            <button class="special">Registrovat</button>
-        </section>
+        <div id="mobileMenuContent">
+            <nav>
+                <button onclick="location.href='./'">Úvod</button>
+                <button onclick="location.href='./club.html'">Klub</button>
+                <button onclick="location.href='./vehicles.html'">Naše vozidla</button>
+                <button onclick="location.href='./articles.html'">Články</button>
+                <button class="selected" onclick="location.href='./gallery.html'">Galerie</button>
+                <button onclick="location.href='./calendar.html'">Kalendář akcí</button>
+                <button onclick="location.href='./links.html'">Odkazy</button>
+            </nav>
+            <section class="loginSection">
+                <button onclick="location.href='./login.html?type=login'">Přihlásit se</button>
+                <button onclick="location.href='./login.html?type=register'" class="special">Registrovat</button>
+            </section>
+        </div>
     </section>
 </body>
 <script src="js/script.js"></script>
 <script src="js/gallery.js"></script>
+<script type="module" src="js/supabase.js"></script>
+
 </html>

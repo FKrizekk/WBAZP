@@ -33,7 +33,7 @@
                     <button class="selected" onclick="location.href='./links.html'">Odkazy</button>
                 </nav>
                 <div class="vertDiv"></div>
-                <section id="loginSection">
+                <section class="loginSection">
                     <button onclick="location.href='./login.html?type=login'">Přihlásit se</button>
                     <button onclick="location.href='./login.html?type=register'" class="special">Registrovat</button>
                 </section>
@@ -61,7 +61,24 @@
         <article>
             <h2>Odkazy</h2>
             <hr>
-            <a href="https://ssps.cajthaml.eu/2-wba-2024/work/zp-2-kontrolni-bod">link click</a>
+            <ul>
+                <li><a href="https://usavans.cz/index.php/cs/odkazy/20-spratelene-weby-a-kluby">
+                    Spřátelené weby a kluby
+                </a></li>
+                <li><a href="https://usavans.cz/index.php/cs/odkazy/12-wikipedia~">
+                    Wikipedia
+                </a></li>
+                </a></li>
+                <li><a href="https://usavans.cz/index.php/cs/odkazy/13-cestopisy">
+                    Cestopisy
+                </a></li>
+                <li><a href="https://usavans.cz/index.php/cs/odkazy/14-upravy-a-upravci">
+                    Úpravy a úpravci
+                </a></li>
+                <li>
+                    Videa
+                </li>
+            </ul>
         </article> 
     </main>
     <section id="mobileMenu">
@@ -77,21 +94,24 @@
                 </section>
             </div>
         </header>
-        <nav>
-            <button onclick="location.href='./'">Úvod</button>
-            <button onclick="location.href='./club.html'">Klub</button>
-            <button onclick="location.href='./vehicles.html'">Naše vozidla</button>
-            <button onclick="location.href='./articles.html'">Články</button>
-            <button onclick="location.href='./gallery.html'">Galerie</button>
-            <button onclick="location.href='./calendar.html'">Kalendář akcí</button>
-            <button class="selected" onclick="location.href='./links.html'">Odkazy</button>
-        </nav>
-        <section id="loginSection">
-            <button>Přihlásit se</button>
-            <button class="special">Registrovat</button>
-        </section>
+        <div id="mobileMenuContent">
+            <nav>
+                <button onclick="location.href='./'">Úvod</button>
+                <button onclick="location.href='./club.html'">Klub</button>
+                <button onclick="location.href='./vehicles.html'">Naše vozidla</button>
+                <button onclick="location.href='./articles.html'">Články</button>
+                <button onclick="location.href='./gallery.html'">Galerie</button>
+                <button onclick="location.href='./calendar.html'">Kalendář akcí</button>
+                <button class="selected" onclick="location.href='./links.html'">Odkazy</button>
+            </nav>
+            <section class="loginSection">
+                <button onclick="location.href='./login.html?type=login'">Přihlásit se</button>
+                <button onclick="location.href='./login.html?type=register'" class="special">Registrovat</button>
+            </section>
+        </div>
     </section>
 </body>
 <script src="js/script.js"></script>
+<script type="module" src="js/supabase.js"></script>
 
 </html>

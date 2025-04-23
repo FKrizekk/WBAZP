@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <title>Přihlášení - USA Vans Club</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/login.css">
     <style>
         ul{
             margin-bottom: 1rem;
@@ -59,9 +60,22 @@
     </header>
     <main>
         <article>
-            <h2>Site</h2>
+            <h2>Login/Register</h2>
             <hr>
-            <p>gdsffgd</p>
+            <form id="auth-form">
+                <div class="formGroup">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required />
+                </div>
+                <div class="formGroup">
+                    <label for="password">Heslo:</label>
+                    <input type="password" id="password" name="password" required />
+                </div>
+                <div class="formGroup">
+                    <button type="submit">Přihlásit se</button>
+                </div>
+            </form>
+            <button id="logout-button">Log Out</button>
         </article> 
     </main>
     <section id="mobileMenu">
@@ -77,22 +91,74 @@
                 </section>
             </div>
         </header>
-        <nav>
-            <button onclick="location.href='./'">Úvod</button>
-            <button onclick="location.href='./club.html'">Klub</button>
-            <button onclick="location.href='./vehicles.html'">Naše vozidla</button>
-            <button onclick="location.href='./articles.html'">Články</button>
-            <button onclick="location.href='./gallery.html'">Galerie</button>
-            <button onclick="location.href='./calendar.html'">Kalendář akcí</button>
-            <button onclick="location.href='./links.html'">Odkazy</button>
-        </nav>
-        <section id="loginSection">
-            <button>Přihlásit se</button>
-            <button class="special">Registrovat</button>
-        </section>
+        <div id="mobileMenuContent">
+            <nav>
+                <button onclick="location.href='./'">Úvod</button>
+                <button onclick="location.href='./club.html'">Klub</button>
+                <button onclick="location.href='./vehicles.html'">Naše vozidla</button>
+                <button onclick="location.href='./articles.html'">Články</button>
+                <button onclick="location.href='./gallery.html'">Galerie</button>
+                <button onclick="location.href='./calendar.html'">Kalendář akcí</button>
+                <button onclick="location.href='./links.html'">Odkazy</button>
+            </nav>
+            <section id="loginSection">
+                <button onclick="location.href='./login.html?type=login'">Přihlásit se</button>
+                <button onclick="location.href='./login.html?type=register'" class="special">Registrovat</button>
+            </section>
+        </div>
     </section>
 </body>
 <script src="js/script.js"></script>
 <script src="js/login.js"></script>
+<!-- <script type="module" src="js/supabase.js"></script> -->
+<script type="module">
+    import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm';
+    
+    const supabaseUrl = 'https://glpxjoolzgsorebqkfrk.supabase.co';
+    const supabaseAnonKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdscHhqb29semdzb3JlYnFrZnJrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDU0MjYzMTEsImV4cCI6MjA2MTAwMjMxMX0.Md8JoGfIp6ayhHEntdsnVCTb-K7mzjP8-kUNnhKDEGY';
+    const supabase = createClient(supabaseUrl, supabaseAnonKey);
+    
+    
+    
+    const { data: { session } } = await supabase.auth.getSession();
+    if (session) {
+        // User is logged in
+        console.log("User is logged in");
+        window.location.href = './profile.html';
+    } else {
+        // User is not logged in
+        console.log("User is not logged in");
+    }
 
+    const form = document.getElementById('auth-form');
+    form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const email = form.email.value;
+        const password = form.password.value;
+
+        // Attempt to sign in
+        const { error } = await supabase.auth.signInWithPassword({ email, password });
+
+        if (error) {
+            // If sign-in fails, attempt to sign up
+            const { error: signUpError } = await supabase.auth.signUp({ email, password });
+            if (signUpError) {
+                alert('Error: ' + signUpError.message);
+            } else {
+                alert('Registration successful! Please check your email to confirm.');
+            }
+        }
+        else {
+            // Redirect to the profile page or any other page
+            window.location.href = './profile.html';
+        }
+    });
+
+    document.getElementById('logout-button').addEventListener('click', async () => {
+    const { error } = await supabase.auth.signOut();
+        if (error) {
+            alert('Error logging out: ' + error.message);
+        }
+    });
+</script>
 </html>

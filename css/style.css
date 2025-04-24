@@ -137,6 +137,15 @@ button.special:hover{
     color: var(--text);
     border: solid 2px var(--text);
 }
+button:disabled{
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+button.special:hover:disabled{
+    border-color: transparent;
+    background-color: #ccc;
+    color: var(--header);
+}
 button > i{
     width: 100%;
     height: 100%;

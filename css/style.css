@@ -23,7 +23,7 @@ body{
     flex-direction: column;
     align-items: center;
 }
-header{
+custom-header, header{
     position: fixed;
     background-color: var(--header);
     color: var(--secondary);
@@ -110,7 +110,7 @@ div.vertDiv{
 iframe{
     border-radius: 5px;
 }
-button{
+button,a.button{
     background-color: var(--header);
     border-radius: 5px;
     color: var(--textLight);
@@ -119,34 +119,35 @@ button{
     cursor: pointer;
     font-family: 'Bebas Neue', sans-serif;
     font-size: 1rem;
+    text-decoration: none;
 }
-button:hover{
+button:hover,a.button:hover{
     background-color: rgba(0, 0, 0, 0.205);
     color: var(--text);
 }
-button.selected{
+button.selected,a.button.selected{
     background-color: var(--primary);
     color: var(--header);
 }
-button.special{
+button.special,a.button.special{
     background-color: var(--text);
     color: var(--header);
 }
-button.special:hover{
+button.special:hover,a.button.special:hover{
     background-color: var(--header);
     color: var(--text);
     border: solid 2px var(--text);
 }
-button:disabled{
+button:disabled,a.button:disabled{
     background-color: #ccc;
     cursor: not-allowed;
 }
-button.special:hover:disabled{
+button.special:hover:disabled,a.button.special:hover:disabled{
     border-color: transparent;
     background-color: #ccc;
     color: var(--header);
 }
-button > i{
+button > i,a.button > i{
     width: 100%;
     height: 100%;
 }
@@ -222,43 +223,48 @@ p{
 
 
 #mobileMenu{
-    width: 100%;
-    height: 100%;
+    touch-action: none;
+    height: calc(100% - 60px);
     background-color: var(--background);
     z-index: 10000;
     position: fixed;
+    bottom: 0;
+    right: 0;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    align-items: end;
     transform: translateX(100%);
-    transition: all 0.1s ease-out;
 }
 #mobileMenuContent > nav{
-    gap: 10px;
     width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: stretch;
+    gap: 0;
 }
-#mobileMenuContent > nav > button{
-    font-size: 4rem;
+#mobileMenuContent > nav > a.button{
+    font-size: 3.5rem;
+    text-align: start;
+    padding: 4px 4rem 0px 4px;
 }
-#mobileMenuContent #loginSection > button{
-    font-size: 3rem;
+#mobileMenuContent .loginSection > a.button{
+    font-size: 2rem;
+    text-align: start;
 }
-#mobileMenuContent #loginSection{
+#mobileMenuContent .loginSection{
     width: 100%;
-    display: flex;
-    justify-content: space-evenly;
-}
-#mobileMenuContent{
-    margin-top: 60px;
-    width: 100%;
-    height: calc(100% - 60px);
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
+}
+#mobileMenuContent{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 3rem 0 3rem 1rem;
     align-items: center;
     gap: 10px;
 }

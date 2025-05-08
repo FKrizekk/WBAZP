@@ -17,46 +17,7 @@
 </head>
 
 <body>
-    <header>
-        <div id="header">
-            <section>
-                <h1>USA VANS CLUB</h1>
-            </section>
-            <section id="desktopNav">
-                <nav>
-                    <button onclick="location.href='./'">Úvod</button>
-                    <button onclick="location.href='./club.html'">Klub</button>
-                    <button onclick="location.href='./vehicles.html'">Naše vozidla</button>
-                    <button onclick="location.href='./articles.html'">Články</button>
-                    <button onclick="location.href='./gallery.html'">Galerie</button>
-                    <button onclick="location.href='./calendar.html'">Kalendář akcí</button>
-                    <button class="selected" onclick="location.href='./links.html'">Odkazy</button>
-                </nav>
-                <div class="vertDiv"></div>
-                <section class="loginSection">
-                    <button onclick="location.href='./login.html?type=login'">Přihlásit se</button>
-                    <button onclick="location.href='./login.html?type=register'" class="special">Registrovat</button>
-                </section>
-            </section>
-            <section id="iconNav">
-                <nav>
-                    <button onclick="location.href='./'"><i class="fa-solid fa-house"></i></button>
-                    <button onclick="location.href='./club.html'"><i class="fa-solid fa-users"></i></button>
-                    <button onclick="location.href='./vehicles.html'"><i class="fa-solid fa-car"></i></button>
-                    <button onclick="location.href='./articles.html'"><i class="fa-solid fa-newspaper"></i></button>
-                    <button onclick="location.href='./gallery.html'"><i class="fa-solid fa-image"></i></button>
-                    <button onclick="location.href='./calendar.html'"><i class="fa-solid fa-calendar-days"></i></button>
-                    <button class="selected" onclick="location.href='./links.html'"><i class="fa-solid fa-link"></i></button>
-                    <button onclick="location.href='./login.html'"><i class="fa-solid fa-user"></i></button>
-                </nav>
-            </section>
-            <section id="mobileNav">
-                <button class="mobileMenuButton" onclick="toggleMobileMenu()">
-                    <i class="fa-solid fa-bars"></i>
-                </button>
-            </section>
-        </div>
-    </header>
+    <custom-header></custom-header>
     <main>
         <article>
             <h2>Odkazy</h2>
@@ -81,35 +42,7 @@
             </ul>
         </article> 
     </main>
-    <section id="mobileMenu">
-        <header>
-            <div id="header">
-                <section>
-                    <h1>USA VANS CLUB</h1>
-                </section>
-                <section id="mobileNav">
-                    <button class="mobileMenuButton" onclick="toggleMobileMenu()">
-                        <i class="fa-solid fa-bars"></i>
-                    </button>
-                </section>
-            </div>
-        </header>
-        <div id="mobileMenuContent">
-            <nav>
-                <button onclick="location.href='./'">Úvod</button>
-                <button onclick="location.href='./club.html'">Klub</button>
-                <button onclick="location.href='./vehicles.html'">Naše vozidla</button>
-                <button onclick="location.href='./articles.html'">Články</button>
-                <button onclick="location.href='./gallery.html'">Galerie</button>
-                <button onclick="location.href='./calendar.html'">Kalendář akcí</button>
-                <button class="selected" onclick="location.href='./links.html'">Odkazy</button>
-            </nav>
-            <section class="loginSection">
-                <button onclick="location.href='./login.html?type=login'">Přihlásit se</button>
-                <button onclick="location.href='./login.html?type=register'" class="special">Registrovat</button>
-            </section>
-        </div>
-    </section>
+    <mobile-menu></mobile-menu>
 </body>
 <script src="js/script.js"></script>
 <script type="module" src="js/supabase.js"></script>

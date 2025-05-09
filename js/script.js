@@ -23,14 +23,14 @@ class Header extends HTMLElement {
             </section>
             <section id="iconNav">
                 <nav>
-                    <a class="button" href='./'><i class="fa-solid fa-house"></i></a>
-                    <a class="button" href='./club.html'><i class="fa-solid fa-users"></i></a>
-                    <a class="button" href='./vehicles.html'><i class="fa-solid fa-car"></i></a>
-                    <a class="button" href='./articles.html'><i class="fa-solid fa-newspaper"></i></a>
-                    <a class="button" href='./gallery.html'><i class="fa-solid fa-image"></i></a>
-                    <a class="button" href='./calendar.html'><i class="fa-solid fa-calendar-days"></i></a>
-                    <a class="button" href='./links.html'><i class="fa-solid fa-link"></i></a>
-                    <a class="button" href='./login.html'><i class="fa-solid fa-user"></i></a>
+                    <a class="button" title="Úvod" href='./'><i class="fa-solid fa-house"></i></a>
+                    <a class="button" title="Klub" href='./club.html'><i class="fa-solid fa-users"></i></a>
+                    <a class="button" title="Naše vozidla" href='./vehicles.html'><i class="fa-solid fa-car"></i></a>
+                    <a class="button" title="Články" href='./articles.html'><i class="fa-solid fa-newspaper"></i></a>
+                    <a class="button" title="Galerie" href='./gallery.html'><i class="fa-solid fa-image"></i></a>
+                    <a class="button" title="Kalendář akcí" href='./calendar.html'><i class="fa-solid fa-calendar-days"></i></a>
+                    <a class="button" title="Odkazy" href='./links.html'><i class="fa-solid fa-link"></i></a>
+                    <a class="button" title="Uživatel" href='./login.html'><i class="fa-solid fa-user"></i></a>
                 </nav>
             </section>
             <section id="mobileNav">
@@ -75,10 +75,38 @@ class MobileMenu extends HTMLElement {
 }
 customElements.define('mobile-menu', MobileMenu);
 
+class VehicleCard extends HTMLElement {
+    constructor(owner, name, year) {
+        super();
+        this.innerHTML = `
+            <div class="vehicleCardInfo">
+                <h4>${name}</h4>
+                <p>Majitel: ${owner}</p>
+                <p>Rok výroby: ${year}</p>
+            </div>`;
+        this.classList.add("vehicleCard");
+    }
+}
+customElements.define('vehicle-card', VehicleCard);
+
+class Loader extends HTMLElement {
+    constructor() {
+        super();
+        this.innerHTML = `
+        <svg viewBox="25 25 50 50" class="loader">
+            <circle r="20" cy="50" cx="50"></circle>
+        </svg>`;
+    }
+}
+customElements.define('loader-element', Loader);
+
 
 let buttons = document.querySelectorAll("a.button");
 buttons.forEach(button => {
     if(button.href === location.href) {
+        button.classList.add("selected");
+    }
+    if(button.href.includes("/login.html") && location.href.includes("/profile.html")) {
         button.classList.add("selected");
     }
 });

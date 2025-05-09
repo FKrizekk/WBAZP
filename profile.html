@@ -10,39 +10,55 @@
     <title>Profil test</title>
     <link rel="stylesheet" href="css/style.css">
     <title>Dokument</title>
+    <style>
+        #profileCarPanel{
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+    </style>
 </head>
 
 <body>
     <custom-header></custom-header>
     <main>
         <article>
-            <h2>Profile</h2>
+            <h2 id="username">Profile</h2>
             <hr>
-            <p></p>
+            <p id="email"></p>
+            <p id="bio">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore quo quasi dignissimos cupiditate ratione fugiat voluptatum veniam voluptas error odio? Quaerat distinctio cupiditate sapiente molestias corporis ex illo eveniet voluptas.</p>
+            <hr>
+            <h3>Vozidla</h3>
+            <section id="profileCarPanel" class="panel">
+                <div class="vehicleCard">
+                    <div class="vehicleCardInfo">
+                        <h4>Chevy Van G20</h4>
+                        <p>Rok výroby: 1988</p>
+                    </div>
+                </div>
+                <div class="vehicleCard">
+                    <div class="vehicleCardInfo">
+                        <h4>Chevy Van G20</h4>
+                        <p>Rok výroby: 1988</p>
+                    </div>
+                </div>
+            </section>
         </article> 
     </main>
     <mobile-menu></mobile-menu>
 </body>
 <script src="js/script.js"></script>
-<script type="module">
-    import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm';
-
-    const supabaseUrl = 'https://glpxjoolzgsorebqkfrk.supabase.co';
-    const supabaseAnonKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdscHhqb29semdzb3JlYnFrZnJrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDU0MjYzMTEsImV4cCI6MjA2MTAwMjMxMX0.Md8JoGfIp6ayhHEntdsnVCTb-K7mzjP8-kUNnhKDEGY';
-    const supabase = createClient(supabaseUrl, supabaseAnonKey);
-
-  
-    const { data: { session } } = await supabase.auth.getSession();
-    if (session) {
-        // User is logged in
-        console.log("User is logged in");
-        document.querySelector("main p").innerText = session.user.email;
-    } else {
-        // User is not logged in
-        console.log("User is not logged in redirecting to login page");
-        window.location.href = "./login.html?type=login";
-    }
-    
-</script>
 <script type="module" src="js/supabase.js"></script>
+<script type="module">
+    window.supabase.auth.onAuthStateChange((event, session) => {
+        if (session) {
+            const user = session.user;
+            const email = user.email;
+            const username = user.user_metadata.username;
+
+            document.querySelector('#username').innerText = `${username}`;
+            document.querySelector('#email').innerText = `${email}`;
+        }
+    });
+</script>
 </html>

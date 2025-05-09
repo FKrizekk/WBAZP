@@ -269,17 +269,47 @@ p{
     gap: 10px;
 }
 
-
-
-
-
-
-
 #iconNav,#mobileNav{
     display: none;
 }
 
-
+h4{
+    font-size: 1.5rem;
+    font-family: 'Bebas Neue', sans-serif;
+    white-space: nowrap;
+}
+#carPanel{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+#carPanel > .vehicleCard{
+    width: calc(50% - 5px);
+}
+.vehicleCard{
+    box-sizing: border-box;
+    cursor: pointer;
+    border: black 2px solid;
+    background-image: url("/gallery/IMG_2113.JPG");
+    background-size: cover;
+    background-position: center;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    aspect-ratio: 16/9;
+}
+.vehicleCardInfo{
+    width: fit-content;
+    background-color: rgb(27, 27, 27);
+    border-bottom-right-radius: 5px;
+    box-sizing: border-box;
+    padding: 10px;
+    color: var(--secondary);
+    display: flex;
+    flex-direction: column;
+}
 
 @media (max-width: 1600px){
     #desktopNav,#mobileNav{

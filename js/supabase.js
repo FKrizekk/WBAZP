@@ -2,30 +2,26 @@ import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js
     
 const supabaseUrl = 'https://glpxjoolzgsorebqkfrk.supabase.co';
 const supabaseAnonKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImdscHhqb29semdzb3JlYnFrZnJrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDU0MjYzMTEsImV4cCI6MjA2MTAwMjMxMX0.Md8JoGfIp6ayhHEntdsnVCTb-K7mzjP8-kUNnhKDEGY';
-window.supabase = createClient(supabaseUrl, supabaseAnonKey);
+window.supabase = window.supabaseSession || createClient(supabaseUrl, supabaseAnonKey);
 
+(async () => {
+    const {
+        data: { session },
+        error
+    } = await window.supabase.auth.getSession();
 
+    if (error) {
+        console.error('Session error:', error.message);
+    } else {
+        window.supabaseSession = session;
+    }
+})();
 
-const { data: { session } } = await supabase.auth.getSession();
-if (session) {
-    // User is logged in
-    console.log("User is logged in");
-    login();
-} else {
-    // User is not logged in
-    console.log("User is not logged in");
-    logout();
-
-}
-
-supabase.auth.onAuthStateChange((event, session) => {
+window.supabase.auth.onAuthStateChange((event, session) => {
+    console.log('Auth state changed:', event, session);
     if (session) {
-        // User is logged in
-        console.log("User logged in");
         login();
     } else {
-        // User is logged out
-        console.log("User logged out");
         logout();
     }
 });
@@ -33,7 +29,7 @@ supabase.auth.onAuthStateChange((event, session) => {
 
 
 function login() {
-    let buttons = document.querySelectorAll(".loginSection button")
+    let buttons = document.querySelectorAll(".loginSection a.button")
     buttons[0].innerText = "Profil";
     buttons[1].innerText = "Odhlásit se";
     buttons[0].onclick = () => {
@@ -51,7 +47,7 @@ function login() {
 }
 
 function logout() {
-    let buttons = document.querySelectorAll(".loginSection button")
+    let buttons = document.querySelectorAll(".loginSection a.button")
     buttons[0].innerText = "Přihlásit se";
     buttons[1].innerText = "Registrovat se";
     buttons[0].onclick = () => {

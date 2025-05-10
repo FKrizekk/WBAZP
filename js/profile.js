@@ -126,7 +126,7 @@ await supabase.from("vehicles").select("*").eq("user_id", user.id).then(({ data,
             document.querySelector("#carDetailsModal #carName").innerText = car.name;
             document.querySelector("#carDetailsModal #carYear").innerText = `Rok výroby: ${car.year}`;
             document.querySelector("#carDetailsModal #carDescription").innerText = `${car.description}`;
-            document.querySelector("#carDetailsModal #carOwner").innerHTML = `Majitel: <a href=./users?user=${data.username}>${data.username}</a>`;
+            document.querySelector("#carDetailsModal #carOwner").innerHTML = `Majitel: <a href=./user.html?id=${car.user_id}>${data.username}</a>`;
             carModal.style.display = "flex";
         });
         panel.appendChild(vehicleCard);

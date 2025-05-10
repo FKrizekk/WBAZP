@@ -37,18 +37,12 @@
             <section>
                 <h2>Nejnovější členové</h2>
                 <section id="memberPanel" class="panel">
-                    <a href="">Jan Van</a>
-                    <a href="">Pepa z Depa</a>
-                    <a href="">John Ford</a>
                 </section>
             <section>
                 <h2>Nejnovější fotky</h2>
                 <section id="photoPanel" class="panel">
-                    <div>
-                        <div style="background-image: url(gallery/20230323_162547.jpg);"></div>
-                        <div style="background-image: url(gallery/IMG_2113.JPG);"></div>
-                        <div style="background-image: url(gallery/IMG_3573.JPG);"></div>
-                        <i href='./gallery.html'" class="fa-solid fa-images"></i>
+                    <div id="photoContainer">
+                        <i onclick="location.href=`./gallery.html`" class="fa-solid fa-images"></i>
                     </div>
                 </section>
             </section>
@@ -75,4 +69,5 @@
 </body>
 <script src="js/script.js"></script>
 <script type="module" src="js/supabase.js"></script>
+<script type="module" src="js/index.js"></script>
 </html>

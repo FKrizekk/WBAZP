@@ -24,4 +24,3 @@ photos.forEach((photo, i) => {
 });
 
 
-

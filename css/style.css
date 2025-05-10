@@ -445,7 +445,7 @@ a.button.signoutButton {
     background-color: var(--header);
 }
 
-@media (max-width: 1600px) {
+@media (max-width: 1500px) {
 
     #desktopNav,
     #mobileNav {

@@ -1,4 +1,4 @@
-import { supabase } from "/js/supabase.js";
+import { supabase } from "js/supabase.js";
 
 supabase.auth.onAuthStateChange((event, session) => {
     if (session) {

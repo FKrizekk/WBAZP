@@ -45,7 +45,7 @@ await supabase.from("vehicles").select("*").eq("user_id", user_id).then(({ data,
 
 let { data: profile, profileErr } = await supabase
     .from('profiles')
-    .select('avatar_url, bio')
+    .select('avatar_url, bio, username')
     .eq('id', user_id)
     .single();
 
@@ -54,3 +54,4 @@ if (profileErr) {
 }
 document.querySelector("#avatar").src = profile.avatar_url;
 document.querySelector("#bio").innerText = profile.bio;
+document.querySelector("#username").innerText = profile.username;

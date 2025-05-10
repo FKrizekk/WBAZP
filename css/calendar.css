@@ -1,0 +1,12 @@
+.event{
+    border: 1px solid #000000;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 5px;
+}
+pre {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  overflow: hidden;        
+}

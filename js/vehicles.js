@@ -29,7 +29,9 @@ cars.forEach((car, i) => {
     document.querySelector("#carOwner").innerHTML = `Majitel: <a href=./user.html?id=${car.user_id}>${username}</a>`;
     carModal.style.display = "flex";
   });
-  panel.appendChild(vehicleCard);
+  const el = panel.appendChild(vehicleCard);
+  el.style.setProperty('--animate-delay', `${i * 0.01}s`);
+  el.classList.add('animate__fadeIn', 'animate__animated');
 });
 
 

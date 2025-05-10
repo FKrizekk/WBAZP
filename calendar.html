@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <title>Kalendář - USA Vans Club</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/calendar.css">
     <style>
         ul{
             margin-bottom: 1rem;
@@ -20,16 +21,20 @@
     <custom-header></custom-header>
     <main>
         <article>
-            <h2>Kalendář</h2>
+            <h2>Kalendář akcí</h2>
             <hr>
-            <svg viewBox="25 25 50 50" class="loader fullscreen">
-                <circle r="20" cy="50" cx="50"></circle>
-            </svg>
+            <h3>Nadcházejcí akce</h3>
+            <div id="upcoming-events">
+            </div>
+            <hr>
+            <h3>Předešlé akce</h3>
+            <div id="past-events">
+            </div>
         </article> 
     </main>
     <mobile-menu></mobile-menu>
 </body>
 <script src="js/script.js"></script>
 <script type="module" src="js/supabase.js"></script>
-
+<script type="module" src="js/calendar.js"></script>
 </html>

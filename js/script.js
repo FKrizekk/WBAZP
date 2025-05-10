@@ -122,3 +122,14 @@ function toggleMobileMenu(){
     mobileMenu.style.transform = mobileMenu.style.transform === "translateX(0px)" ? "translateX(100%)" : "translateX(0px)";
 }
 
+
+document.querySelectorAll('.modal-content').forEach(modal => { 
+    modal.addEventListener('click', (e) => {
+        e.stopPropagation();
+    });
+});
+document.querySelectorAll('.modal').forEach(modal => {
+    modal.addEventListener('click', () => {
+        modal.style.display = "none";
+    });
+});

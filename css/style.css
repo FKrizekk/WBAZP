@@ -467,6 +467,10 @@ a.button.signoutButton {
         padding: 0;
     }
 
+
+    #footer {
+        width: 100%;
+    }
     #header {
         width: 100%;
         padding: 0 15px;

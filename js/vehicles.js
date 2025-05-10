@@ -20,7 +20,7 @@ await supabase.from("vehicles").select("*").then(({ data, error }) => {
         document.querySelector("#carName").innerText = car.name;
         document.querySelector("#carYear").innerText = `Rok výroby: ${car.year}`;
         document.querySelector("#carDescription").innerText = `${car.description}`;
-        document.querySelector("#carOwner").innerHTML = `Majitel: <a href=./users?user=${data.username}>${data.username}</a>`;
+        document.querySelector("#carOwner").innerHTML = `Majitel: <a href=./user.html?id=${car.user_id}>${data.username}</a>`;
         carModal.style.display = "flex";
       });
       panel.appendChild(vehicleCard);

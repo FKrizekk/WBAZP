@@ -1,6 +1,6 @@
-import { supabase } from "./supabase.js";
+import { supabase, updateProfile, uploadAvatar } from "./supabase.js";
 
-supabase.auth.onAuthStateChange((event, session) => {
+supabase.auth.onAuthStateChange(async (event, session) => {
     if (session) {
         const user = session.user;
         const email = user.email;
@@ -29,10 +29,15 @@ document.querySelector("#addCar").addEventListener("click", () => {
     addCarModal.style.display = "flex";
     document.querySelector("#addCarForm").reset();
 });
+document.querySelector("#editProfileButton").addEventListener("click", () => {
+    document.querySelector("#editProfileModal").style.display = "flex";
+    document.querySelector("#editProfileForm #bio").value = document.querySelector("#bio").innerText;
+});
 document.querySelectorAll(".closeModal").forEach((el) => {
     el.addEventListener("click", () => {
         addCarModal.style.display = "none";
         carModal.style.display = "none";
+        document.querySelector("#editProfileModal").style.display = "none";
     });
 });
 
@@ -93,6 +98,7 @@ document
         alert("Úspěšně přidáno vozidlo!");
         addCarModal.style.display = "none";
         console.log(data);
+        location.reload();
     });
 
 
@@ -108,21 +114,57 @@ await supabase.from("vehicles").select("*").eq("user_id", user.id).then(({ data,
     }
 
     data.forEach(async car => {
-      const { data, error } = await supabase
-        .from('profiles')
-        .select('username')
-        .eq('id', car.user_id)
-        .single();
-      const vehicleCard = new VehicleCard(data.username, car.name, car.year, car.image_url);
-      const panel = document.querySelector("#profileCarPanel");
-      vehicleCard.addEventListener("click", () => {
-        document.querySelector("#carDetailsModal #carImage").src = car.image_url;
-        document.querySelector("#carDetailsModal #carName").innerText = car.name;
-        document.querySelector("#carDetailsModal #carYear").innerText = `Rok výroby: ${car.year}`;
-        document.querySelector("#carDetailsModal #carDescription").innerText = `${car.description}`;
-        document.querySelector("#carDetailsModal #carOwner").innerHTML = `Majitel: <a href=./users?user=${data.username}>${data.username}</a>`;
-        carModal.style.display = "flex";
-      });
-      panel.appendChild(vehicleCard);
+        const { data, error } = await supabase
+            .from('profiles')
+            .select('username')
+            .eq('id', car.user_id)
+            .single();
+        const vehicleCard = new VehicleCard(data.username, car.name, car.year, car.image_url);
+        const panel = document.querySelector("#profileCarPanel");
+        vehicleCard.addEventListener("click", () => {
+            document.querySelector("#carDetailsModal #carImage").src = car.image_url;
+            document.querySelector("#carDetailsModal #carName").innerText = car.name;
+            document.querySelector("#carDetailsModal #carYear").innerText = `Rok výroby: ${car.year}`;
+            document.querySelector("#carDetailsModal #carDescription").innerText = `${car.description}`;
+            document.querySelector("#carDetailsModal #carOwner").innerHTML = `Majitel: <a href=./users?user=${data.username}>${data.username}</a>`;
+            carModal.style.display = "flex";
+        });
+        panel.appendChild(vehicleCard);
     });
 });
+
+
+
+document.querySelector("#editProfileForm").addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const fileInput = document.querySelector("#editProfileForm #avatar");
+    const file = fileInput.files[0];
+
+    if (file) {
+        try {
+            await updateProfile(await uploadAvatar(file), document.querySelector("#editProfileForm #bio").value);
+            alert("Profilový obrázek úspěšně aktualizován!");
+            location.reload();
+        } catch (error) {
+            console.error("Chyba při nahrávání obrázku:", error);
+        }
+    } else {
+        alert("Žádný soubor nebyl vybrán.");
+    }
+});
+
+
+
+
+let { data: profile, profileErr } = await supabase
+    .from('profiles')
+    .select('avatar_url, bio')
+    .eq('id', user.id)
+    .single();
+
+if (profileErr) {
+    console.error("Chyba při načítání profilu:", profileErr);
+}
+document.querySelector("#avatar").src = profile.avatar_url;
+document.querySelector("#bio").innerText = profile.bio;

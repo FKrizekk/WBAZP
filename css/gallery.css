@@ -25,12 +25,14 @@
     transform: scale(1.03);
 }
 .modal-content{
+    background-color: transparent;
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-direction: row;
     width: 90%;
     height: 100%;
+    padding: 0;
     max-width: 90%;
 }
 .modal{
@@ -50,6 +52,7 @@
 .modalImg{
     max-height: 70%;
     max-width: 70%;
+    user-select: none;
 }
 .modalBtn{
     background-color: rgba(0, 0, 0, 0.397);
@@ -66,3 +69,4 @@
 .modalBtn:hover{
     transform: scale(1.05);
 }
+

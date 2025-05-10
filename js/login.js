@@ -11,39 +11,3 @@ document.getElementById("registerArticle").style.display = loginType === "regist
 
 
 
-async function uploadAvatar(file) {
-    const { data: { user }, error } = await supabase.auth.getUser();
-    const fileExt = file.name.split('.').pop();
-    const fileName = `${user.id}.${fileExt}`;
-    const filePath = `${fileName}`;
-
-    // Upload the image to Supabase Storage
-    const { error: uploadError } = await supabase.storage
-        .from('avatars')
-        .upload(filePath, file);
-
-    if (uploadError) {
-        throw uploadError;
-    }
-
-    // Retrieve the public URL of the uploaded image
-    const { publicURL, error: urlError } = supabase.storage
-        .from('avatars')
-        .getPublicUrl(filePath);
-
-    if (urlError) {
-        throw urlError;
-    }
-
-    // Update the user's profile with the avatar URL
-    const { error: updateError } = await supabase
-        .from('profiles')
-        .update({ avatar_url: publicURL })
-        .eq('id', user.id);
-
-    if (updateError) {
-        throw updateError;
-    }
-
-    return publicURL;
-}

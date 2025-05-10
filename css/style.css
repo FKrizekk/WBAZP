@@ -354,7 +354,7 @@ h4 {
     font-size: 10rem;
 }
 
-#addCarModal,#carDetailsModal {
+.modal {
     position: fixed;
     top: 0;
     left: 0;
@@ -376,7 +376,7 @@ h4 {
     background-position: center;
     border-radius: 5px;
 }
-#addCarForm {
+#addCarForm,#editProfileForm {
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -391,7 +391,6 @@ h4 {
     border-radius: 5px;
     width: 50%;
     max-width: 500px;
-    /* Set a max width */
 }
 .modal-header{
     display: flex;
@@ -406,7 +405,7 @@ h4 {
 
 .vehicleCardInfo {
     width: fit-content;
-    background-color: rgb(27, 27, 27);
+    background-color: rgba(27, 27, 27, 0.919);
     border-bottom-right-radius: 5px;
     box-sizing: border-box;
     padding: 10px;
@@ -427,6 +426,17 @@ a.button.signoutButton {
 .iconLayoutOnly{
     display: none;
 }
+#avatar {
+    width: 200px;
+}
+#profileButtons{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+
 
 @media (max-width: 1600px) {
 
@@ -455,8 +465,21 @@ a.button.signoutButton {
         padding: 0 15px;
     }
 
+    #carPanel{
+        flex-direction: column;
+    }
+    #carPanel>.vehicleCard {
+        width: 100%;
+    }
+    #addCarModal .modal-content, #carDetailsModal .modal-content {
+        width: 70%;
+    }
+    #carPanel p{
+        font-size: 0.8rem;
+        margin-bottom: 0;
+    }
     #desktopNav,
-    #iconNav {
+    #iconNav,.iconLayoutOnly {
         display: none;
     }
 

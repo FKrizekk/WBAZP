@@ -5,13 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://meyerweb.com/eric/tools/css/reset/reset.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-    <title>Vozidla - USA Vans Club</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <title>Dokument</title>
     <style>
-        ul{
-            margin-bottom: 1rem;
+        #profileCarPanel{
+            display: flex;
+            flex-direction: column-reverse;
+            gap: 1rem;
         }
     </style>
 </head>
@@ -20,12 +22,16 @@
     <custom-header></custom-header>
     <main>
         <article>
-            <h2>Naše Vozidla</h2>
+            <img id="avatar" src="" alt="">
+            <h2 id="username">Profile</h2>
             <hr>
-            <section id="carPanel">
-
+            <p id="email"></p>
+            <p id="bio">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore quo quasi dignissimos cupiditate ratione fugiat voluptatum veniam voluptas error odio? Quaerat distinctio cupiditate sapiente molestias corporis ex illo eveniet voluptas.</p>
+            <hr>
+            <h3>Vozidla</h3>
+            <section id="profileCarPanel" class="panel">
             </section>
-        </article> 
+        </article>
     </main>
     <mobile-menu></mobile-menu>
     <div id="carDetailsModal" class="modal">
@@ -45,5 +51,5 @@
 </body>
 <script src="js/script.js"></script>
 <script type="module" src="js/supabase.js"></script>
-<script type="module" src="js/vehicles.js"></script>
+<script type="module" src="js/user.js"></script>
 </html>

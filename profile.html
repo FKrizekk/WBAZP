@@ -23,13 +23,17 @@
     <custom-header></custom-header>
     <main>
         <article>
+            <img id="avatar" src="" alt="">
             <h2 id="username">Profile</h2>
             <hr>
             <p id="email"></p>
             <p id="bio">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore quo quasi dignissimos cupiditate ratione fugiat voluptatum veniam voluptas error odio? Quaerat distinctio cupiditate sapiente molestias corporis ex illo eveniet voluptas.</p>
             <hr>
-            <button id="signoutButton" class="iconLayoutOnly">Odhlásit</button>
-            <hr class="iconLayoutOnly">
+            <div id="profileButtons">
+                <button id="signoutButton" class="iconLayoutOnly">Odhlásit</button>
+                <button id="editProfileButton">Upravit profil</button>
+            </div>
+            <hr>
             <h3>Vozidla</h3>
             <section id="profileCarPanel" class="panel">
                 <div id="addCar">
@@ -59,7 +63,7 @@
             </form>
         </div>
     </div>
-    <div id="carDetailsModal">
+    <div id="carDetailsModal" class="modal">
         <div class="modal-content">
             <div class="modal-header">
                 <h2 id="carName">Název vozidla</h2>
@@ -71,6 +75,22 @@
                 <p id="carYear">Rok výroby</p>
                 <p id="carOwner">Majitel vozidla</p>
             </div>
+        </div>
+    </div>
+    <div id="editProfileModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Upravit profil</h2>
+                <span class="closeModal">&times;</span>
+            </div>
+            <form id="editProfileForm">
+                <label for="avatar">Avatar:</label>
+                <input type="file" id="avatar" name="avatar" accept="image/*">
+                <label for="bio">Bio:</label>
+                <textarea id="bio" name="bio" required></textarea>
+                <button type="submit">Uložit změny</button>
+            </form>
+        </div>
     </div>
 </body>
 <script src="js/script.js"></script>

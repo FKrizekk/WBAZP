@@ -10,6 +10,7 @@ class Header extends HTMLElement {
                     <a class="button" href='./'>Úvod</a>
                     <a class="button" href='./club.html'>Klub</a>
                     <a class="button" href='./vehicles.html'>Naše vozidla</a>
+                    <a class="button" href='./articles.html'>Články</a>
                     <a class="button" href='./gallery.html'>Galerie</a>
                     <a class="button" href='./calendar.html'>Kalendář akcí</a>
                     <a class="button" href='./links.html'>Odkazy</a>
@@ -25,6 +26,7 @@ class Header extends HTMLElement {
                     <a class="button" title="Úvod" href='./'><i class="fa-solid fa-house"></i></a>
                     <a class="button" title="Klub" href='./club.html'><i class="fa-solid fa-users"></i></a>
                     <a class="button" title="Naše vozidla" href='./vehicles.html'><i class="fa-solid fa-car"></i></a>
+                    <a class="button" title="Články" href='./articles.html'><i class="fa-solid fa-newspaper"></i></a>
                     <a class="button" title="Galerie" href='./gallery.html'><i class="fa-solid fa-image"></i></a>
                     <a class="button" title="Kalendář akcí" href='./calendar.html'><i class="fa-solid fa-calendar-days"></i></a>
                     <a class="button" title="Odkazy" href='./links.html'><i class="fa-solid fa-link"></i></a>
@@ -53,6 +55,7 @@ class MobileMenu extends HTMLElement {
                 <a class="button" href='./'>Úvod</a>
                 <a class="button" href='./club.html'>Klub</a>
                 <a class="button" href='./vehicles.html'>Naše vozidla</a>
+                <a class="button" href='./articles.html'>Články</a>
                 <a class="button" href='./gallery.html'>Galerie</a>
                 <a class="button" href='./calendar.html'>Kalendář akcí</a>
                 <a class="button" href='./links.html'>Odkazy</a>

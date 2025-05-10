@@ -11,3 +11,12 @@ form{
     align-items: flex-start;
     gap: 5px;
 }
+
+@media (max-width: 1000px) {
+    form{
+        width: 100%;
+    }
+    .formGroup{
+        width: 100%;
+    }
+}

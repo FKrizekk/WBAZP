@@ -428,6 +428,8 @@ a.button.signoutButton {
 }
 #avatar {
     width: 200px;
+    border: black 2px solid;
+    border-radius: 5px;
 }
 #profileButtons{
     display: flex;

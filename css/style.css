@@ -438,7 +438,12 @@ a.button.signoutButton {
     gap: 10px;
 }
 
-
+.footer{
+    padding: 5px;
+    box-sizing: border-box;
+    width: 60%;
+    background-color: var(--header);
+}
 
 @media (max-width: 1600px) {
 

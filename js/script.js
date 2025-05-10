@@ -42,6 +42,24 @@ class Header extends HTMLElement {
 }
 customElements.define('custom-header', Header);
 
+class Footer extends HTMLElement {
+    constructor() {
+        super();
+        this.innerHTML = `<div id="footer">
+            <section>
+                <p>© 2025 František Křížek</p>
+                <p>Vytvořeno s láskou v ČR</p>
+            </section>
+            <section>
+                <a href="https://www.facebook.com/USAVANSCLUB" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                <a href="https://www.instagram.com/usavansclub/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+            </section>
+        </div>`;
+        this.classList.add("footer");
+    }
+}
+customElements.define('custom-footer', Footer);
+
 
 class MobileMenu extends HTMLElement {
     constructor() {

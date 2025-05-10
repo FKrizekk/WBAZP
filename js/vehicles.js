@@ -1,4 +1,4 @@
-import { supabase } from 'supabase.js';
+import { supabase } from './supabase.js';
 
 const carModal = document.querySelector("#carDetailsModal");
 await supabase.from("vehicles").select("*").then(({ data, error }) => {

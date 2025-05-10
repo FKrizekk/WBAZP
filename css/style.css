@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
-:root{
+:root {
     --text: #000000;
     --textLight: #494949;
     --header: rgb(231, 231, 231);
@@ -11,10 +11,11 @@
     --tertiary: #bf0a30;
 }
 
-*{
+* {
     font-family: 'Montserrat', sans-serif;
 }
-body{
+
+body {
     overflow-y: scroll;
     line-height: normal;
     background-color: var(--background);
@@ -23,7 +24,9 @@ body{
     flex-direction: column;
     align-items: center;
 }
-custom-header, header{
+
+custom-header,
+header {
     position: fixed;
     background-color: var(--header);
     color: var(--secondary);
@@ -34,7 +37,8 @@ custom-header, header{
     box-shadow: black 0px 0px 25px -5px;
     z-index: 1000;
 }
-aside{
+
+aside {
     position: fixed;
     width: 100vw;
     height: 100vh;
@@ -42,32 +46,38 @@ aside{
     flex-direction: column;
     justify-content: center;
 }
-nav{
+
+nav {
     display: flex;
     flex-direction: row;
     gap: 2px;
 }
-h1{
+
+h1 {
     cursor: pointer;
     color: var(--text);
     font-size: 3rem;
     font-family: 'Bebas Neue', sans-serif;
 }
-h2{
+
+h2 {
     margin-top: 0.5rem;
     color: #003fa5;
     font-size: 2.5rem;
     white-space: nowrap;
     font-family: 'Bebas Neue', sans-serif;
 }
-h3{
+
+h3 {
     font-size: 1.5rem;
     font-family: 'Bebas Neue', sans-serif;
 }
-ul{
+
+ul {
     list-style: disc inside;
 }
-main{
+
+main {
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
@@ -78,17 +88,20 @@ main{
     border-bottom-right-radius: 5px;
     border-bottom-left-radius: 5px;
 }
-article{
+
+article {
     margin: 15px;
 }
-#header{
+
+#header {
     width: 60%;
     height: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-#desktopNav{
+
+#desktopNav {
     height: 100%;
     display: flex;
     flex-direction: row;
@@ -96,21 +109,24 @@ article{
     align-items: center;
     color: var(--text);
 }
-#logo{
+
+#logo {
     background-color: white;
 }
 
-div.vertDiv{
+div.vertDiv {
     height: 60%;
     width: 2px;
     background-color: var(--textLight);
     margin: 0 10px;
 }
 
-iframe{
+iframe {
     border-radius: 5px;
 }
-button,a.button{
+
+button,
+a.button {
     background-color: var(--header);
     border-radius: 5px;
     color: var(--textLight);
@@ -121,50 +137,66 @@ button,a.button{
     font-size: 1rem;
     text-decoration: none;
 }
-button:hover,a.button:hover{
+
+button:hover,
+a.button:hover {
     background-color: rgba(0, 0, 0, 0.205);
     color: var(--text);
 }
-button.selected,a.button.selected{
+
+button.selected,
+a.button.selected {
     background-color: var(--primary);
     color: var(--header);
 }
-button.special,a.button.special{
+
+button.special,
+a.button.special {
     background-color: var(--text);
     color: var(--header);
 }
-button.special:hover,a.button.special:hover{
+
+button.special:hover,
+a.button.special:hover {
     background-color: var(--header);
     color: var(--text);
     border: solid 2px var(--text);
 }
-button:disabled,a.button:disabled{
+
+button:disabled,
+a.button:disabled {
     background-color: #ccc;
     cursor: not-allowed;
 }
-button.special:hover:disabled,a.button.special:hover:disabled{
+
+button.special:hover:disabled,
+a.button.special:hover:disabled {
     border-color: transparent;
     background-color: #ccc;
     color: var(--header);
 }
-button > i,a.button > i{
+
+button>i,
+a.button>i {
     width: 100%;
     height: 100%;
 }
 
 
-#memberPanel{
+#memberPanel {
     display: flex;
     flex-direction: column;
 }
-#memberPanel > a{
+
+#memberPanel>a {
     text-decoration: none;
 }
-#memberPanel > a:hover{
+
+#memberPanel>a:hover {
     text-decoration: underline;
 }
 
-#photoPanel > div{
+#photoPanel>div {
     border-radius: 5px;
     overflow: hidden;
     width: 100%;
@@ -173,7 +205,9 @@ button > i,a.button > i{
     flex-direction: row;
     flex-wrap: wrap;
 }
-#photoPanel > div > div,#photoPanel i{
+
+#photoPanel>div>div,
+#photoPanel i {
     background-color: var(--secondary);
     cursor: pointer;
     width: 50%;
@@ -181,7 +215,8 @@ button > i,a.button > i{
     background-position: center;
     background-size: cover;
 }
-#photoPanel > div > i{
+
+#photoPanel>div>i {
     font-size: 4rem;
     display: flex;
     justify-content: center;
@@ -189,19 +224,21 @@ button > i,a.button > i{
     color: var(--text);
 }
 
-.panel{
+.panel {
     box-sizing: border-box;
     width: 100%;
     background-color: var(--header);
     border-radius: 5px;
     padding: 15px;
 }
-.event{
+
+.event {
     position: relative;
     display: flex;
     flex-direction: column;
 }
-.event > img{
+
+.event>img {
     filter: drop-shadow(0 0 5px var(--text));
     width: 200px;
     position: absolute;
@@ -212,17 +249,18 @@ button > i,a.button > i{
 
 
 
-strong{
+strong {
     font-family: 'Bebas Neue', sans-serif;
     font-size: 2rem;
     color: var(--text);
 }
-p{
+
+p {
     margin-bottom: 0.5rem;
 }
 
 
-#mobileMenu{
+#mobileMenu {
     touch-action: none;
     height: calc(100% - 60px);
     background-color: var(--background);
@@ -236,7 +274,8 @@ p{
     align-items: end;
     transform: translateX(100%);
 }
-#mobileMenuContent > nav{
+
+#mobileMenuContent>nav {
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -244,22 +283,26 @@ p{
     align-items: stretch;
     gap: 0;
 }
-#mobileMenuContent > nav > a.button{
+
+#mobileMenuContent>nav>a.button {
     font-size: 3.5rem;
     text-align: start;
     padding: 4px 4rem 0px 4px;
 }
-#mobileMenuContent .loginSection > a.button{
+
+#mobileMenuContent .loginSection>a.button {
     font-size: 2rem;
     text-align: start;
 }
-#mobileMenuContent .loginSection{
+
+#mobileMenuContent .loginSection {
     width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
 }
-#mobileMenuContent{
+
+#mobileMenuContent {
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -269,29 +312,33 @@ p{
     gap: 10px;
 }
 
-#iconNav,#mobileNav{
+#iconNav,
+#mobileNav {
     display: none;
 }
 
-h4{
+h4 {
     font-size: 1.5rem;
     font-family: 'Bebas Neue', sans-serif;
     white-space: nowrap;
 }
-#carPanel{
+
+#carPanel {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     gap: 10px;
 }
-#carPanel > .vehicleCard{
+
+#carPanel>.vehicleCard {
     width: calc(50% - 5px);
 }
-.vehicleCard{
+
+.vehicleCard,
+#addCar {
     box-sizing: border-box;
     cursor: pointer;
     border: black 2px solid;
-    background-image: url("/gallery/IMG_2113.JPG");
     background-size: cover;
     background-position: center;
     border-radius: 5px;
@@ -300,7 +347,64 @@ h4{
     overflow: hidden;
     aspect-ratio: 16/9;
 }
-.vehicleCardInfo{
+
+#addCar {
+    justify-content: center;
+    align-items: center;
+    font-size: 10rem;
+}
+
+#addCarModal,#carDetailsModal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    font-family: Montserrat;
+}
+#carImage{
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    border-radius: 5px;
+}
+#addCarForm {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    max-width: 500px;
+    /* Set a max width */
+}
+
+.modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    width: 50%;
+    max-width: 500px;
+    /* Set a max width */
+}
+.modal-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.closeModal {
+    cursor: pointer;
+    font-size: 2rem;
+    user-select: none;
+}
+
+.vehicleCardInfo {
     width: fit-content;
     background-color: rgb(27, 27, 27);
     border-bottom-right-radius: 5px;
@@ -311,30 +415,52 @@ h4{
     flex-direction: column;
 }
 
-@media (max-width: 1600px){
-    #desktopNav,#mobileNav{
+a.button.signoutButton {
+    background-color: var(--tertiary);
+    color: var(--secondary);
+}
+#signoutButton{
+    background-color: var(--tertiary);
+    color: var(--secondary);
+    width: fit-content;
+}
+.iconLayoutOnly{
+    display: none;
+}
+
+@media (max-width: 1600px) {
+
+    #desktopNav,
+    #mobileNav {
         display: none;
     }
-    #iconNav{
+
+    #iconNav,.iconLayoutOnly {
         display: block;
     }
-    main{
+
+    main {
         flex-direction: column-reverse;
     }
 }
-@media (max-width: 1000px){
-    main{
+
+@media (max-width: 1000px) {
+    main {
         width: 100%;
         padding: 0;
     }
-    #header{
+
+    #header {
         width: 100%;
         padding: 0 15px;
     }
-    #desktopNav,#iconNav{
+
+    #desktopNav,
+    #iconNav {
         display: none;
     }
-    #mobileNav{
+
+    #mobileNav {
         display: block;
     }
 }
@@ -348,9 +474,11 @@ h4{
     transform-origin: center;
     animation: rotate4 2s linear infinite;
 }
-.loader.fullscreen{
+
+.loader.fullscreen {
     height: 300px;
 }
+
 circle {
     fill: none;
     stroke: hsl(214, 97%, 59%);

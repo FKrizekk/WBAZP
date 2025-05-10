@@ -28,6 +28,19 @@
         </article> 
     </main>
     <mobile-menu></mobile-menu>
+    <div id="carDetailsModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="carName">Název vozidla</h2>
+                <span class="closeModal">&times;</span>
+            </div>
+            <div class="modal-body">
+                <img id="carImage" src="" alt="Obrázek vozidla">
+                <p id="carDescription">Popis vozidla</p>
+                <p id="carYear">Rok výroby</p>
+                <p id="carOwner">Majitel vozidla</p>
+            </div>
+    </div>
 </body>
 <script src="js/script.js"></script>
 <script type="module" src="js/supabase.js"></script>

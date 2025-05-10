@@ -1,7 +1,34 @@
-const { data: vehicles, error: uerror } = await window.supabase
-  .from('vehicles')
-  .select('*');
+import { supabase } from '/js/supabase.js';
 
-vehicles.forEach(car => {
-    document.querySelector("#carPanel").appendChild(new VehicleCard(car.user_id, car.name, car.year));
+const carModal = document.querySelector("#carDetailsModal");
+await supabase.from("vehicles").select("*").then(({ data, error }) => {
+    if (error) {
+        console.error("Chyba při načítání vozidel:", error);
+        return;
+    }
+
+    data.forEach(async car => {
+      const { data, error } = await supabase
+        .from('profiles')
+        .select('username')
+        .eq('id', car.user_id)
+        .single();
+      const vehicleCard = new VehicleCard(data.username, car.name, car.year, car.image_url);
+      const panel = document.querySelector("#carPanel");
+      vehicleCard.addEventListener("click", () => {
+        document.querySelector("#carImage").src = car.image_url;
+        document.querySelector("#carName").innerText = car.name;
+        document.querySelector("#carYear").innerText = `Rok výroby: ${car.year}`;
+        document.querySelector("#carDescription").innerText = `${car.description}`;
+        document.querySelector("#carOwner").innerHTML = `Majitel: <a href=./users?user=${data.username}>${data.username}</a>`;
+        carModal.style.display = "flex";
+      });
+      panel.appendChild(vehicleCard);
+    });
+});
+
+
+
+document.querySelector(".closeModal").addEventListener("click", () => {
+  carModal.style.display = "none";
 });

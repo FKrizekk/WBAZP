@@ -13,7 +13,7 @@
     <style>
         #profileCarPanel{
             display: flex;
-            flex-direction: column;
+            flex-direction: column-reverse;
             gap: 1rem;
         }
     </style>
@@ -28,37 +28,52 @@
             <p id="email"></p>
             <p id="bio">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore quo quasi dignissimos cupiditate ratione fugiat voluptatum veniam voluptas error odio? Quaerat distinctio cupiditate sapiente molestias corporis ex illo eveniet voluptas.</p>
             <hr>
+            <button id="signoutButton" class="iconLayoutOnly">Odhlásit</button>
+            <hr class="iconLayoutOnly">
             <h3>Vozidla</h3>
             <section id="profileCarPanel" class="panel">
-                <div class="vehicleCard">
-                    <div class="vehicleCardInfo">
-                        <h4>Chevy Van G20</h4>
-                        <p>Rok výroby: 1988</p>
-                    </div>
-                </div>
-                <div class="vehicleCard">
-                    <div class="vehicleCardInfo">
-                        <h4>Chevy Van G20</h4>
-                        <p>Rok výroby: 1988</p>
-                    </div>
+                <div id="addCar">
+                    <h4>Přidat vozidlo</h4>
+                    <i class="fa-regular fa-square-plus"></i>
                 </div>
             </section>
-        </article> 
+        </article>
     </main>
     <mobile-menu></mobile-menu>
+    <div id="addCarModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Přidat vozidlo</h2>
+                <span class="closeModal">&times;</span>
+            </div>
+            <form id="addCarForm">
+                <label for="carName">Název vozidla:</label>
+                <input type="text" id="carName" name="carName" required>
+                <label for="carImage">Obrázek vozidla:</label>
+                <input type="file" id="carImage" name="carImage" required accept="image/*">
+                <label for="carDescription">Popis vozidla:</label>
+                <textarea id="carDescription" name="carDescription"></textarea>
+                <label for="carYear">Rok výroby:</label>
+                <input type="number" id="carYear" name="carYear" required>
+                <button type="submit">Přidat vozidlo</button>
+            </form>
+        </div>
+    </div>
+    <div id="carDetailsModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="carName">Název vozidla</h2>
+                <span class="closeModal">&times;</span>
+            </div>
+            <div class="modal-body">
+                <img id="carImage" src="" alt="Obrázek vozidla">
+                <p id="carDescription">Popis vozidla</p>
+                <p id="carYear">Rok výroby</p>
+                <p id="carOwner">Majitel vozidla</p>
+            </div>
+    </div>
 </body>
 <script src="js/script.js"></script>
 <script type="module" src="js/supabase.js"></script>
-<script type="module">
-    window.supabase.auth.onAuthStateChange((event, session) => {
-        if (session) {
-            const user = session.user;
-            const email = user.email;
-            const username = user.user_metadata.username;
-
-            document.querySelector('#username').innerText = `${username}`;
-            document.querySelector('#email').innerText = `${email}`;
-        }
-    });
-</script>
+<script type="module" src="js/profile.js"></script>
 </html>

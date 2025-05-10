@@ -76,7 +76,7 @@ class MobileMenu extends HTMLElement {
 customElements.define('mobile-menu', MobileMenu);
 
 class VehicleCard extends HTMLElement {
-    constructor(owner, name, year) {
+    constructor(owner, name, year, image) {
         super();
         this.innerHTML = `
             <div class="vehicleCardInfo">
@@ -85,6 +85,7 @@ class VehicleCard extends HTMLElement {
                 <p>Rok výroby: ${year}</p>
             </div>`;
         this.classList.add("vehicleCard");
+        this.style.backgroundImage = `url(${image})`;
     }
 }
 customElements.define('vehicle-card', VehicleCard);
